@@ -14,7 +14,13 @@ const noteSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now,
-  }
+  },
+  // Example snippet for the Note schema
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
 });
 
 const Note = mongoose.model("Note", noteSchema);
